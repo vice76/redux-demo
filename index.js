@@ -9,3 +9,17 @@ function buycake(){ //action creator simply creates a
     
 }
 
+const initialState = {
+    numOfCakes : 10
+};
+
+const reducer = (state = initialState , action) => {
+    switch(action.type) {
+        case BUY_CAKE : return {
+            ...state, //spread operator so that only numOfCakes property gets updated.
+            numOfCakes : state.numOfCakes -1
+        }
+
+        default : return state
+    }
+}
